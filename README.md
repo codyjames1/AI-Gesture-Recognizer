@@ -178,32 +178,33 @@ def save_data(X, y, letter):
     with open(file_paths['labels'], 'wb') as f:
         pickle.dump(y, f)
 ```
-Dataset
+# Dataset
 The model is trained using a dataset of approximately 600,000 images of the ASL alphabet. The dataset contains images for each letter of the alphabet (A-Z), with each image containing a hand gesture representing a letter.
 
-Environment Setup
+# Environment Setup
 To set up the environment for running the project, follow these steps:
 
-Install Python: Ensure you have Python installed. You can download it from python.org.
+### Install Python: Ensure you have Python installed. You can download it from python.org.
 
-Create a Virtual Environment:
+### Create a Virtual Environment:
 
-sh
+## sh
 Copy code
 python -m venv newenv
 Activate the Virtual Environment:
 
-On Windows:
+## On Windows:
 sh
 Copy code
 .\newenv\Scripts\activate
-On macOS and Linux:
+
+## On macOS and Linux:
 sh
 Copy code
 source newenv/bin/activate
 Install Required Packages:
 
-sh
+## sh
 Copy code
 pip install opencv-python mediapipe tensorflow pyttsx3
 Future Work
