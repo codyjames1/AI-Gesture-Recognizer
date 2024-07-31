@@ -61,27 +61,27 @@ Relevant Code Snippet:
 Copy code
 import mediapipe as mp
 ```
-# Initialize MediaPipe Hands model and drawing utilities
+### Initialize MediaPipe Hands model and drawing utilities
 ```Python
 mp_hands = mp.solutions.hands
 mp_drawing = mp.solutions.drawing_utils
 mp_drawing_styles = mp.solutions.drawing_styles
 ```
-# Initialize MediaPipe Hands model
+### Initialize MediaPipe Hands model
 ```Python
 hands = mp_hands.Hands(static_image_mode=False, max_num_hands=1, min_detection_confidence=0.5, min_tracking_confidence=0.5)
 ```
-# Process a frame from the webcam
+### Process a frame from the webcam
 ```Python
 results = hands.process(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
 ```
-# Draw landmarks on the image
+### Draw landmarks on the image
 ```Python
 for hand_landmarks in results.multi_hand_landmarks:
     mp_drawing.draw_landmarks(image, hand_landmarks, mp_hands.HAND_CONNECTIONS, mp_drawing_styles.get_default_hand_landmarks_style(), mp_drawing_styles.get_default_hand_connections_style())
-TensorFlow
-TensorFlow is an open-source machine learning framework developed by Google. It provides a comprehensive ecosystem of tools, libraries, and community resources for building and deploying machine learning models.
 ```
+# TensorFlow
+TensorFlow is an open-source machine learning framework developed by Google. It provides a comprehensive ecosystem of tools, libraries, and community resources for building and deploying machine learning models.
 ## Usage in the Project:
 
 Training a neural network model to predict ASL letters based on hand landmarks.
@@ -95,7 +95,7 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Dropout
 from tensorflow.keras.utils import to_categorical
 ```
-# Define the model
+### Define the model
 ```Python
 def build_model(input_shape):
     model = Sequential([
@@ -110,12 +110,13 @@ def build_model(input_shape):
     model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
     return model
 ```
-# Load the model from a file
+### Load the model from a file
 ```Python
 model = tf.keras.models.load_model(MODEL_FILE)
-Pyttsx3
-Pyttsx3 is a text-to-speech conversion library in Python. Unlike other libraries, it works offline and is compatible with both Python 2 and 3.
 ```
+# Pyttsx3
+Pyttsx3 is a text-to-speech conversion library in Python. Unlike other libraries, it works offline and is compatible with both Python 2 and 3.
+
 ## Usage in the Project:
 
 Converting the predicted ASL letter into speech.
@@ -125,17 +126,9 @@ Relevant Code Snippet:
 Copy code
 import pyttsx3
 ```
-# Initialize text-to-speech engine
+### Initialize text-to-speech engine
 ```Python
 engine = pyttsx3.init()
-```
-# Set voice to female
-```Python
-voices = engine.getProperty('voices')
-for voice in voices:
-    if 'female' in voice.name.lower():
-        engine.setProperty('voice', voice.id)
-        break
 ```
 # Function to speak a message
 ```Python
@@ -149,11 +142,14 @@ def speak_letter(letter):
     engine.say(letter)
     engine.runAndWait()
 ```
-### Other Libraries
-Numpy: Used for numerical operations and handling arrays.
-Pickle: Used for serializing and deserializing Python object structures.
-TQDM: Used for displaying progress bars.
-Relevant Code Snippets:
+# Other Libraries
+## Numpy: 
+Used for numerical operations and handling arrays.
+## Pickle: 
+Used for serializing and deserializing Python object structures.
+## TQDM: 
+Used for displaying progress bars.
+### Relevant Code Snippets:
 
 ```python
 Copy code
@@ -161,14 +157,14 @@ import numpy as np
 import pickle
 from tqdm import tqdm
 ```
-# Normalize landmarks to a consistent scale
+### Normalize landmarks to a consistent scale
 ```Python
 def normalize_landmarks(landmarks, image_shape):
     height, width = image_shape[:2]
     normalized_landmarks = [(lm.x * width, lm.y * height) for lm in landmarks]
     return np.array(normalized_landmarks).flatten()
 ```
-# Save data to files
+### Save data to files
 ```Python
 def save_data(X, y, letter):
     file_paths = get_feature_label_files(letter)
