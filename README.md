@@ -1,37 +1,39 @@
-AI Gesture Recognizer Documentation
-Table of Contents
-Introduction
-Project Overview
-Technologies Used
-OpenCV
-MediaPipe
-TensorFlow
-Pyttsx3
-Other Libraries
-Dataset
-Environment Setup
-Future Work
-Introduction
+# AI Gesture Recognizer Documentation
+
+## Table of Contents
+- [Introduction](#introduction)
+- [Project Overview](#project-overview)
+- [Technologies Used](#technologies-used)
+  - [OpenCV](#opencv)
+  - [MediaPipe](#mediapipe)
+  - [TensorFlow](#tensorflow)
+  - [Pyttsx3](#pyttsx3)
+  - [Other Libraries](#other-libraries)
+- [Dataset](#dataset)
+- [Environment Setup](#environment-setup)
+- [Future Work](#future-work)
+
+## Introduction
 The AI Gesture Recognizer is designed to translate American Sign Language (ASL) gestures into spoken words. This tool aims to bridge the communication gap between deaf and hearing individuals by providing real-time or phone-based ASL translation.
 
-Project Overview
+## Project Overview
 The project consists of three main scripts:
 
-run.py: Runs the webcam feed, processes hand gestures, and predicts ASL letters using a trained model.
-extract_features.py: Processes a dataset of ASL images to extract hand landmarks and save them for training.
-retrain.py: Trains a neural network model using the extracted landmarks to predict ASL letters.
-Technologies Used
-OpenCV
+- **run.py**: Runs the webcam feed, processes hand gestures, and predicts ASL letters using a trained model.
+- **extract_features.py**: Processes a dataset of ASL images to extract hand landmarks and save them for training.
+- **retrain.py**: Trains a neural network model using the extracted landmarks to predict ASL letters.
+
+## Technologies Used
+
+### OpenCV
 OpenCV (Open Source Computer Vision Library) is an open-source computer vision and machine learning software library. It contains more than 2500 optimized algorithms, which can be used for various computer vision tasks.
 
-Usage in the Project:
+**Usage in the Project**:
+- Capturing video from the webcam.
+- Reading and resizing images.
 
-Capturing video from the webcam.
-Reading and resizing images.
-Relevant Code Snippet:
-
-python
-Copy code
+**Relevant Code Snippet**:
+```python
 import cv2
 
 # Capture video from the webcam
