@@ -16,6 +16,11 @@
 ## Introduction
 The AI Gesture Recognizer is designed to translate American Sign Language (ASL) gestures into spoken words. This tool aims to bridge the communication gap between deaf and hearing individuals by providing real-time or phone-based ASL translation.
 
+![AI Gesture Recognizer Logo](images/a.png)
+![AI Gesture Recognizer Logo](images/b.png)
+![AI Gesture Recognizer Logo](images/c.png)
+![AI Gesture Recognizer Logo](images/k.png)
+
 ## Project Overview
 The project consists of three main scripts:
 
